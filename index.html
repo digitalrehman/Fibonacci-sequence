@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500&family=Fjalla+One&family=Lobster&family=Oswald:wght@500&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: linear-gradient(-45deg, #683fd9, #e73c7e, #309ac1, #17f1f8);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 100vh;
+    }
+    
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    .heading {
+        display: flex;
+        justify-content: center;
+        margin: 5% 0 -5% 0;
+        font-family: 'Lobster', cursive;
+        color: snow;
+        font-size: 25px;
+        text-decoration: underline;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        margin-top: 10%;
+    }
+    
+    input[type=text] {
+        width: 30%;
+        height: 30px;
+        border: 0.5px solid rgb(255, 8, 152);
+        color: snow;
+        font-size: 17px;
+        font-weight: 600;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px;
+        background: linear-gradient(-45deg, #EA225E, #C22286, #612E8D);
+        background-size: 200% 200%;
+        animation: GradientBackground 10s ease infinite;
+    }
+    
+    button {
+        padding: 4px 10px;
+        margin-left: 5px;
+        outline: none;
+        font-size: 20px;
+        color: snow;
+        border-radius: 6px;
+        border: none;
+        transition: all 0.5s ease;
+        font-weight: 600;
+        background: linear-gradient(-45deg, #EA225E, #C22286, #612E8D);
+        background-size: 200% 200%;
+        animation: GradientBackground 10s ease infinite;
+    }
+    
+    @keyframes GradientBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+    
+    button:hover {
+        box-shadow: 2px 2px 2px rgb(255, 6, 135);
+    }
+    
+    .output {
+        display: flex;
+        justify-content: center;
+        border: 0.5px solid rgb(255, 0, 179);
+        margin: 30px auto;
+        width: 35%;
+        flex-wrap: wrap;
+        padding: 10px;
+        border-radius: 12px;
+        background: linear-gradient(-45deg, #EA225E, #C22286, #612E8D);
+        background-size: 200% 200%;
+        animation: GradientBackground 10s ease infinite;
+    }
+    
+    h3 {
+        width: 40%;
+        border-radius: 3px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        background-color: snow;
+        border: 1px solid darkblue;
+        margin: 3px;
+        font-family: 'Oswald', sans-serif;
+        padding: 3px;
+    }
+</style>
+
+<body>
+    <div class="heading">
+        <h1>Fibonacci Sequence</h1>
+    </div>
+    <div class="container">
+        <input type="text" id="text">
+        <button id="btn">ADD</button>
+    </div>
+    <div class="output" id="ans"></div>
+    <!-- <h3 id="h3"></h3> -->
+    </div>
+
+
+    <script>
+        let input = document.getElementById("text")
+        let btn = document.getElementById("btn")
+        let head = document.getElementById("ans")
+
+        let test = btn.addEventListener("click", () => {
+            let a = 0;
+            let b = 1;
+            for (let i = 0; i <= input.value; i++) {
+                let temp = a + b
+                a = b
+                let ans = b = temp
+                head.innerHTML += `
+            <h3 id="h3">${ans}</h3>`;
+
+            }
+
+        })
+    </script>
+</body>
+
+</html>
